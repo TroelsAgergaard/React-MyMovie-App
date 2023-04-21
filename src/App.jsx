@@ -16,7 +16,7 @@ function App() {
             <HeadingTwo />
             <SeeMoreButton />
           </div>
-          <div className="flexContainer scroll">
+          <div className="flexContainer scroll movieCardContainer">
             <MovieCard />
             <MovieCard />
             <MovieCard />
