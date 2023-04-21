@@ -6,3 +6,14 @@
 .flexContainer {
   display: flex;
 }
+.space-between {
+  justify-content: space-between;
+}
+.scroll {
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}

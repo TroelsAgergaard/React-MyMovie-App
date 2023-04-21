@@ -1,6 +1,6 @@
 import HeadingOne from "../components/HeadingOne";
 import Image from "../components/Image";
-import Heading3 from "../components/Heading3";
+import Heading3 from "../components/HeadingThree";
 import MovieRating from "../components/MovieRating";
 const MovieCard = () => {
   return (
