@@ -7,7 +7,7 @@ import SeeMoreButton from "./components/SeeMoreButton";
 function App() {
   return (
     <div className="App">
-      <header>
+      <header className="gridContainer">
         <HeadingOne />
       </header>
       <main>
@@ -16,7 +16,7 @@ function App() {
             <HeadingTwo />
             <SeeMoreButton />
           </div>
-          <div className="flexContainer scroll movieCardContainer">
+          <div className="flexContainer movieCardContainer">
             <MovieCard />
             <MovieCard />
             <MovieCard />
