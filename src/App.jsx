@@ -1,9 +1,9 @@
-import "./App.css";
+import "./assets/App.css";
 import HeadingOne from "./components/HeadingOne";
-import MovieCard from "./templates/MovieCard";
+import MovieCard from "./templates/Home/MovieCard";
 import HeadingTwo from "./components/HeadingTwo";
-import SeeMoreButton from "./components/SeeMoreButton";
-import Switch from "./components/Switch";
+import SeeMoreButton from "./components/ui/SeeMoreButton";
+import Switch from "./components/ui/Switch";
 
 function App() {
   return (

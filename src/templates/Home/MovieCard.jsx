@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Image from "../components/Image";
-import Heading3 from "../components/HeadingThree";
-import MovieRating from "../components/MovieRating";
+import Image from "../../components/Image";
+import Heading3 from "../../components/HeadingThree";
+import MovieRating from "../../components/ui/MovieRating";
 
 const StyledArticle = styled.article`
   height: 283px;
