@@ -12,7 +12,8 @@ const Button = styled.button`
 `;
 
 const SeeMoreButton = () => {
-  return <Button>See more</Button>;
+  const handleClick = () => console.log("The button has been clicked...");
+  return <Button onClick={handleClick}>See more</Button>;
 };
 
 export default SeeMoreButton;
