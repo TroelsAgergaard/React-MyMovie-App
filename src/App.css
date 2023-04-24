@@ -1,42 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Mulish:wght@300&display=swap");
+@import "normalize.css";
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 768px;
   padding: 2rem;
-  text-align: center;
+  font-family: "Mulish", sans-serif;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body,
+figure,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+h1,
+h2 {
+  font-family: "Merriweather", serif;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.flexContainer {
+  display: flex;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gridContainer {
+  display: grid;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.space-between {
+  justify-content: space-between;
+  align-items: center;
 }
-
-.card {
-  padding: 2em;
+header {
+  height: 60px;
 }
-
-.read-the-docs {
-  color: #888;
+.movieCardContainer {
+  margin: 2rem -2rem;
+  gap: 1rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  height: 320px;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  /* scroll-behavior: smooth; */
+}
+.movieCardContainer::-webkit-scrollbar {
+  display: none;
 }
