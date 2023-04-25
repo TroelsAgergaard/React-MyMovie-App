@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Mulish:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Mulish:wght@300;500;700&display=swap");
 @import "normalize.css";
 #root {
   max-width: 768px;
@@ -17,6 +17,10 @@ h3 {
 h1,
 h2 {
   font-family: "Merriweather", serif;
+  color: #110e47;
+}
+h3 {
+  font-weight: 700;
 }
 .flexContainer {
   display: flex;
