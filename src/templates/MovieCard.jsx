@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Image from "../components/Image";
-import MovieRating from "../components/MovieRating";
+import Rating from "../components/Rating";
 import Heading from "../components/Heading";
 
 const StyledArticle = styled.article`
@@ -14,10 +14,10 @@ const MovieCard = () => {
   return (
     <StyledArticle>
       <figure>
-        <Image />
+        <Image shadow={true} />
       </figure>
-      <Heading title="Movie Title" size="14" as="h3" />
-      <MovieRating />
+      <Heading title="Venom Let There Be Carnage" size="14" as="h3" />
+      <Rating />
     </StyledArticle>
   );
 };

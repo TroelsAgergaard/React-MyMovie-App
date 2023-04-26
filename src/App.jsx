@@ -1,8 +1,10 @@
 import "./App.css";
 import MovieCard from "./templates/MovieCard";
-import SeeMoreButton from "./components/SeeMoreButton";
+import Button from "./components/Button";
 import Heading from "./components/Heading";
 import Switch from "./components/Switch";
+import MovieItem from "./templates/MovieItem";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
@@ -12,21 +14,37 @@ function App() {
         <Switch />
       </header>
       <main>
-        <section>
-          <div className="flexContainer space-between">
+        <section className="HorizontalMovieListContainer">
+          <div className="flexContainer justify-space-between">
             <Heading title="Now Showing" size="16" as="h2" />
-            <SeeMoreButton />
+            <Button title="See More" />
           </div>
-          <div className="flexContainer movieCardContainer">
+          <div className="flexContainer movieCardContainerLayout">
+            <MovieCard />
             <MovieCard />
             <MovieCard />
             <MovieCard />
           </div>
         </section>
-        <section></section>
+        <section className="VerticalMovieListContainer">
+          <div className="flexContainer justify-space-between VerticalMovieListTitleLayout">
+            <Heading title="Popular" size="16" as="h2" />
+            <Button title="See More" />
+          </div>
+          <div className="flexContainer movieListContainerLayout">
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+            <MovieItem />
+          </div>
+        </section>
       </main>
       <footer>
-        <nav></nav>
+        <Navigation />
       </footer>
     </div>
   );

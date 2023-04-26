@@ -12,7 +12,7 @@ const StyledDiv = styled.div`
   display: flex;
 `;
 
-const MovieRating = () => {
+const Rating = () => {
   return (
     <StyledDiv>
       <StyledFaStar />
@@ -21,4 +21,4 @@ const MovieRating = () => {
   );
 };
 
-export default MovieRating;
+export default Rating;

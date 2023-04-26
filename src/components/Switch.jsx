@@ -5,6 +5,7 @@ import ReactSwitch from "react-switch";
 const StyledSwitch = styled(ReactSwitch)`
   grid-column-start: 3;
   justify-self: end;
+  align-self: center;
 `;
 
 const Switch = () => {
