@@ -62,7 +62,7 @@ header {
   scrollbar-width: none; /* Firefox */
   /* scroll-behavior: smooth; */
 }
-.movieCardContainer::-webkit-scrollbar {
+.movieCardContainerLayout::-webkit-scrollbar {
   display: none;
 }
 .movieListContainerLayout {
