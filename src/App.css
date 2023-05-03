@@ -3,16 +3,20 @@
 #root {
   max-width: 768px;
   font-family: "Mulish", sans-serif;
+  letter-spacing: 0.75px;
+
 }
 main {
   padding: 0 2rem;
 }
 body,
 figure,
+figcaption,
 p,
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -24,7 +28,11 @@ h2 {
 h3 {
   font-weight: 700;
 }
-header {
+h4 {
+  font-weight: 300;
+  color: #9c9c9c;
+}
+.header {
   position: fixed;
   width: calc(100vw - 4rem);
   padding: 0 2rem;
@@ -40,6 +48,9 @@ header {
 }
 .justify-space-between {
   justify-content: space-between;
+}
+.wrap {
+  flex-wrap: wrap;
 }
 .HorizontalMovieListContainer {
   padding: 76px 0 0;
@@ -68,4 +79,8 @@ header {
 .movieListContainerLayout {
   flex-direction: column;
   gap: 16px;
+}
+.movieDescriptionContainerLayout {
+  margin-top: 100px;
+  border: solid 1px red;
 }
