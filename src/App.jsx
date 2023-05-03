@@ -1,11 +1,10 @@
 import "./App.css";
-import DetailsView from "./pages/DetailsView";
-import ListView from "./pages/ListView";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
-      <ListView />
+      <Outlet />
     </div>
   );
 }
