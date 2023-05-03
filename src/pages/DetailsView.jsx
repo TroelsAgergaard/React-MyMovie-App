@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
 import Switch from "../components/Switch";
-import { FaArrowLeft, FaPlay, FaRegBookmark } from "react-icons/fa";
+import { FaArrowLeft, FaPlay } from "react-icons/fa";
 import coverimage from "../assets/moviecover.png";
 import MovieInfo from "../templates/MovieInfo";
 import MovieDescription from "../templates/MovieDescription";
 import MovieCast from "../templates/MovieCast";
+import { Link } from "react-router-dom";
 
 const StyledFaArrowLeft = styled(FaArrowLeft)`
   color: #fff;
@@ -52,7 +53,9 @@ const DetailsView = () => {
   return (
     <>
       <StyledHeader>
-        <StyledFaArrowLeft />
+        <Link to="/">
+          <StyledFaArrowLeft />
+        </Link>
         <StyledSpan>
           <FaPlay />
         </StyledSpan>
