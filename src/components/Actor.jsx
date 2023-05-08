@@ -11,6 +11,7 @@ const StyledFigCaption = styled.figcaption`
 `;
 
 const Actor = (props) => {
+
   return (
     <StyledFigure>
       <Image src={props.imgsrc} objectFit={true} width="75" height="75" />

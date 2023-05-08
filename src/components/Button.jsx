@@ -12,7 +12,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = (props) => {
-  return <StyledButton>{props.title}</StyledButton>;
+  return <StyledButton {...props}>{props.title}</StyledButton>;
 };
 
 export default Button;
