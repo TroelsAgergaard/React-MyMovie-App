@@ -20,7 +20,12 @@ const NowShowing = () => {
         <Link to={`details/${data.id}`} key={data.id}>
           <StyledArticle>
             <figure>
-              <Image width="143" shadow={true} src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} alt="Cover Image" />
+              <Image
+                width="143"
+                shadow={true}
+                src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
+                alt="Cover Image"
+              />
             </figure>
             <Heading
               title={
@@ -41,7 +46,7 @@ const NowShowing = () => {
 
 export async function loader() {
   const res = await fetch(
-    "https://api.themoviedb.org/3/movie/now_playing/?api_key=a996c0fb2a62f3545c6946cb0685bfa0"
+    "https://api.themoviedb.org/3/movie/now_playing/?api_key="
   );
   const data = await res.json();
   return data;
