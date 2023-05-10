@@ -4,12 +4,9 @@ import Heading from "../components/Heading";
 import Switch from "../components/Switch";
 import Popular from "../templates/Popular";
 import Navigation from "../components/Navigation";
-import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 
 const ListView = () => {
-  const ListViewData = useLoaderData();
-
   return (
     <>
       <header className="gridContainer header">
@@ -43,19 +40,18 @@ const ListView = () => {
   );
 };
 
-export const listViewData = async () => {
+export const ListViewData = async () => {
   return await Promise.allSettled([
-    await axios(
-      "https://api.themoviedb.org/3/movie/popular/?api_key="
+    axios(
+      "https://api.themoviedb.org/3/movie/now_playing/?api_key=a996c0fb2a62f3545c6946cb0685bfa0"
     ),
-    await axios(
-      "https://api.themoviedb.org/3/movie/popular/?api_key="
+    axios(
+      "https://api.themoviedb.org/3/movie/popular/?api_key=a996c0fb2a62f3545c6946cb0685bfa0"
     ),
-  ]).then((values) => {
-    console.log("Value: ", values)
+  ]).then((data) => {
     return {
-      nowShowing: values[0].value.data.results,
-      popular: values[1].value.data.results,
+      nowShowing: data[0].value.data.results,
+      popular: data[1].value.data.results,
     };
   });
 };

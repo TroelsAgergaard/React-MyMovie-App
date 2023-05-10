@@ -20,7 +20,7 @@ const Switch = (props) => {
       height={21}
       width={38}
       offColor="#AAA9B1"
-      onColor="#AAA9B1"
+      onColor="#FFF"
       onHandleColor="#000000"
       uncheckedIcon={false}
       checkedIcon={false}

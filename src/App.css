@@ -8,33 +8,6 @@
 main {
   padding: 0 2rem;
 }
-a {
-  color: #000;
-  text-decoration: none;
-}
-body,
-figure,
-figcaption,
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  padding: 0;
-}
-h1,
-h2 {
-  font-family: "Merriweather", serif;
-  color: #110e47;
-}
-h3 {
-  font-weight: 700;
-}
-h4 {
-  font-weight: 300;
-  color: #9c9c9c;
-}
 .header {
   position: fixed;
   width: calc(100vw - 4rem);
@@ -74,7 +47,6 @@ h4 {
   overflow-x: scroll;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
-  /* scroll-behavior: smooth; */
 }
 .movieCardContainerLayout::-webkit-scrollbar {
   display: none;
@@ -82,8 +54,4 @@ h4 {
 .movieListContainerLayout {
   flex-direction: column;
   gap: 16px;
-}
-.movieDescriptionContainerLayout {
-  margin-top: 100px;
-  border: solid 1px red;
 }

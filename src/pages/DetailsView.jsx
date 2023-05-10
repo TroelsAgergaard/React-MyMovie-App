@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import Switch from "../components/Switch";
 import { FaArrowLeft, FaPlay } from "react-icons/fa";
-import coverimage from "../assets/moviecover.png";
 import MovieInfo from "../templates/MovieInfo";
 import MovieDescription from "../templates/MovieDescription";
 import MovieCast from "../templates/MovieCast";
@@ -11,7 +10,7 @@ const StyledFaArrowLeft = styled(FaArrowLeft)`
   color: #fff;
 `;
 const StyledHeader = styled.header`
-  background-image: url(${coverimage});
+  /* background-image: url(); */
   background-size: cover;
   background-position: 0 20%;
   padding: 2rem;

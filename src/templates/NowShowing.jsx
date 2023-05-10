@@ -13,7 +13,6 @@ const StyledArticle = styled.article`
 
 const NowShowing = () => {
   const MovieData = useLoaderData();
-  console.log(MovieData)
   return (
     <>
       {MovieData.nowShowing.map((data) => (

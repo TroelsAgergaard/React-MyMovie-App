@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Heading from "../components/Heading";
 import Button from "../components/Button";
-import dummyimage from "../assets/moviecover.png";
 import Actor from "../components/Actor";
 
 const NewLine = styled.div`
@@ -16,10 +15,7 @@ const MovieCast = () => {
         <Heading title="Cast" size="16" as="h2" />
         <Button title="See More" />
         <NewLine />
-        <Actor imgsrc={dummyimage} />
-        <Actor imgsrc={dummyimage} />
-        <Actor imgsrc={dummyimage} />
-        <Actor imgsrc={dummyimage} />
+        {/* <Actor imgsrc={} /> */}
       </div>
     </section>
   );
