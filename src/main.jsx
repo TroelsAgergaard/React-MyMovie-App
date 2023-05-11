@@ -1,4 +1,3 @@
-import "./main.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -11,13 +10,18 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { ListViewData } from "./pages/ListView";
+import { listViewData } from "./pages/ListView";
+import { detailsViewData } from "./pages/DetailsView";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<RouteNotFound />}>
-      <Route index loader={ListViewData} element={<ListView />} />
-      <Route path="/details/:id" element={<DetailsView />} />
+      <Route index loader={listViewData} element={<ListView />} />
+      <Route
+        path="/details/:id"
+        loader={detailsViewData}
+        element={<DetailsView />}
+      />
     </Route>
   )
 );

@@ -5,6 +5,7 @@ const StyledHeading = styled((props) => props.as)`
   ${(props) =>
     props.as === "h1" &&
     css`
+      max-width: 60vw;
       grid-column-start: 2;
       justify-self: center;
       align-self: center;

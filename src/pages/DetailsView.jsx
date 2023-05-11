@@ -4,24 +4,30 @@ import { FaArrowLeft, FaPlay } from "react-icons/fa";
 import MovieInfo from "../templates/MovieInfo";
 import MovieDescription from "../templates/MovieDescription";
 import MovieCast from "../templates/MovieCast";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import axios from "axios";
 
 const StyledFaArrowLeft = styled(FaArrowLeft)`
+  grid-column-start: 1;
+  grid-row-start: 1;
   color: #fff;
+  margin: 2rem;
 `;
 const StyledHeader = styled.header`
   /* background-image: url(); */
-  background-size: cover;
-  background-position: 0 20%;
-  padding: 2rem;
+  /* background-size: cover; */
+  /* background-position: 0 20%; */
+  /* padding: 2rem; */
   display: grid;
   grid-template-columns: 3;
-  height: 200px;
+  height: calc(200px + 2rem);
   background-color: gray;
 `;
 const StyledSpan = styled.span`
   position: relative;
   display: flex;
+  grid-column-start: 2;
+  grid-row-start: 1;
   justify-content: center;
   align-items: center;
   width: 45px;
@@ -39,6 +45,8 @@ const StyledSpan = styled.span`
   }
 `;
 const StyledMain = styled.main`
+  position: relative;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -47,26 +55,47 @@ const StyledMain = styled.main`
   padding: 2rem;
   margin-top: -10px;
 `;
+const StyledDiv = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+`;
 
 const DetailsView = () => {
+  const movieData = useLoaderData();
+
   return (
     <>
       <StyledHeader>
-        <Link to="/">
-          <StyledFaArrowLeft />
-        </Link>
-        <StyledSpan>
-          <FaPlay />
-        </StyledSpan>
+        <StyledDiv>
+          <iframe
+            width="100%"
+            height="100%"
+            src={`https://www.youtube.com/embed/${movieData.videos.results[0].key}`} 
+            title="YouTube video player"
+            allow="accelerometer; auto-play; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+        </StyledDiv>
+        <StyledFaArrowLeft />
         <Switch justify="end" align="top" />
       </StyledHeader>
       <StyledMain>
-        <MovieInfo />
+        <MovieInfo data={movieData} />
         <MovieDescription />
         <MovieCast />
       </StyledMain>
     </>
   );
+};
+
+export const detailsViewData = async ({ params }) => {
+  const { id } = params;
+  return await axios(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=a996c0fb2a62f3545c6946cb0685bfa0&append_to_response=videos`
+  ).then((details) => {
+    return details.data;
+  });
 };
 
 export default DetailsView;

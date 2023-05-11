@@ -40,7 +40,7 @@ const ListView = () => {
   );
 };
 
-export const ListViewData = async () => {
+export const listViewData = async () => {
   return await Promise.allSettled([
     axios(
       "https://api.themoviedb.org/3/movie/now_playing/?api_key=a996c0fb2a62f3545c6946cb0685bfa0"

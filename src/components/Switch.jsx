@@ -7,6 +7,7 @@ const StyledSwitch = styled(ReactSwitch)`
   grid-row-start: 1;
   justify-self: ${(props) => props.justify};
   align-self: ${(props) => props.align};
+  margin: 2rem;
 `;
 
 const Switch = (props) => {
