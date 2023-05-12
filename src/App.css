@@ -5,6 +5,34 @@
   font-family: "Mulish", sans-serif;
   letter-spacing: 0.75px;
 }
+a {
+  color: #000;
+  text-decoration: none;
+}
+body,
+figure,
+figcaption,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2 {
+  font-family: "Merriweather", serif;
+  color: #110e47;
+}
+h3 {
+  font-weight: 700;
+}
+h4 {
+  font-weight: 300;
+  color: #9c9c9c;
+}
+
 main {
   padding: 0 2rem;
 }

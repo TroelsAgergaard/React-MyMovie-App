@@ -10,7 +10,8 @@ const StyledSection = styled.section`
   gap: 12px;
 `;
 const StyledFaRegBookmark = styled(FaRegBookmark)`
-  align-self: center;
+  align-self: top;
+  padding-left: 25px;
 `;
 const StyledGridSection = styled.section`
   display: grid;
@@ -26,14 +27,15 @@ const StyledP = styled.p`
   font-size: 12px;
 `;
 
-const MovieInfo = () => {
+const MovieInfo = (props) => {
+  console.log("props:", props);
   return (
     <StyledSection>
       <div className="flexContainer justify-space-between">
-        <Heading title="Spiderman: No Way Home" size="20" as="h1" />
+        <Heading title={props.data.details.title} size="20" as="h1" />
         <StyledFaRegBookmark />
       </div>
-      <Rating />
+      <Rating voteAverage={props.data.details.vote_average} />
       <StyledFlexSection>
         <Label title="action" />
         <Label title="action" />
@@ -42,10 +44,10 @@ const MovieInfo = () => {
       <StyledGridSection>
         <Heading title="Length" size="12" as="h4" />
         <Heading title="Langauge" size="12" as="h4" />
-        <Heading title="Rating" size="12" as="h4" />
-        <StyledP>Length4</StyledP>
-        <StyledP>Length4</StyledP>
-        <StyledP>Length4</StyledP>
+        <Heading title="Vote counts" size="12" as="h4" />
+        <StyledP>{props.data.details.runtime} min.</StyledP>
+        <StyledP>{props.data.details.original_language}</StyledP>
+        <StyledP>{props.data.details.vote_count}</StyledP>
       </StyledGridSection>
     </StyledSection>
   );

@@ -3,7 +3,7 @@ import Heading from "../components/Heading";
 import Rating from "../components/Rating";
 import Image from "../components/Image";
 import Label from "../components/Label";
-import Time from "../components/Time";
+import Release from "../components/Release";
 import { Link, useLoaderData } from "react-router-dom";
 
 const StyledArticle = styled.article`
@@ -28,7 +28,11 @@ const Popular = () => {
       {MovieData.popular.map((data) => (
         <Link to={`details/${data.id}`} key={data.id}>
           <StyledArticle>
-            <Image src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} width="85" height="120" />
+            <Image
+              src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
+              width="85"
+              height="120"
+            />
             <StyledSection>
               <Heading title={data.title} size="14" as="h3" />
               <Rating voteAverage={data.vote_average} />
@@ -37,7 +41,7 @@ const Popular = () => {
                 <Label title="thriller" />
                 <Label title="documentary" />
               </StyledDiv>
-              <Time />
+              <Release date={data.release_date} />
             </StyledSection>
           </StyledArticle>
         </Link>
