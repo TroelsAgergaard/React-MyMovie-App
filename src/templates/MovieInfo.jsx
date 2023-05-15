@@ -27,15 +27,14 @@ const StyledP = styled.p`
   font-size: 12px;
 `;
 
-const MovieInfo = (props) => {
-  console.log("props:", props);
+const MovieInfo = ({ data }) => {
   return (
     <StyledSection>
       <div className="flexContainer justify-space-between">
-        <Heading title={props.data.details.title} size="20" as="h1" />
+        <Heading title={data.title} size="20" as="h1" />
         <StyledFaRegBookmark />
       </div>
-      <Rating voteAverage={props.data.details.vote_average} />
+      <Rating voteAverage={data.vote_average} />
       <StyledFlexSection>
         <Label title="action" />
         <Label title="action" />
@@ -45,9 +44,9 @@ const MovieInfo = (props) => {
         <Heading title="Length" size="12" as="h4" />
         <Heading title="Langauge" size="12" as="h4" />
         <Heading title="Vote counts" size="12" as="h4" />
-        <StyledP>{props.data.details.runtime} min.</StyledP>
-        <StyledP>{props.data.details.original_language}</StyledP>
-        <StyledP>{props.data.details.vote_count}</StyledP>
+        <StyledP>{data.runtime} min.</StyledP>
+        <StyledP>{data.original_language}</StyledP>
+        <StyledP>{data.vote_count}</StyledP>
       </StyledGridSection>
     </StyledSection>
   );

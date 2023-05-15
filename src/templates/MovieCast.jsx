@@ -8,14 +8,17 @@ const NewLine = styled.div`
   height: 1rem;
 `;
 
-const MovieCast = () => {
+const MovieCast = ({ data }) => {
+  console.log("Cast ", data);
   return (
     <section>
       <div className="flexContainer justify-space-between wrap">
         <Heading title="Cast" size="16" as="h2" />
         <Button title="See More" />
         <NewLine />
-        {/* <Actor imgsrc={} /> */}
+        {data.cast.map((actor) => (
+          actor.profile_path && <Actor data={actor} />
+        ))}
       </div>
     </section>
   );

@@ -43,7 +43,7 @@ const StyledMain = styled.main`
 
 const DetailsView = () => {
   const DetailData = useLoaderData();
-  console.log(DetailData)
+  console.log("DetailsData: ", DetailData);
   return (
     <>
       <StyledHeader>
@@ -60,9 +60,9 @@ const DetailsView = () => {
         <StyledSwitch justify="end" align="top" />
       </StyledHeader>
       <StyledMain>
-        <MovieInfo data={DetailData} />
-        <MovieDescription data={DetailData} />
-        <MovieCast />
+        <MovieInfo data={DetailData.details} />
+        <MovieDescription data={DetailData.details} />
+        <MovieCast data={DetailData.cast} />
       </StyledMain>
     </>
   );
