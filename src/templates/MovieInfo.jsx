@@ -1,8 +1,8 @@
-import styled from "styled-components";
 import { FaRegBookmark } from "react-icons/fa";
+import styled from "styled-components";
 import Heading from "../components/Heading";
-import Rating from "../components/Rating";
 import Label from "../components/Label";
+import Rating from "../components/Rating";
 
 const StyledSection = styled.section`
   display: flex;

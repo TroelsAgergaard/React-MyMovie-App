@@ -1,18 +1,18 @@
-import styled, { css } from "styled-components";
-import Switch from "../components/Switch";
-import { FaArrowLeft, FaPlay } from "react-icons/fa";
-import MovieInfo from "../templates/MovieInfo";
-import MovieDescription from "../templates/MovieDescription";
-import MovieCast from "../templates/MovieCast";
-import { Link, useLoaderData } from "react-router-dom";
 import axios from "axios";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link, useLoaderData } from "react-router-dom";
+import styled from "styled-components";
+import Switch from "../components/Switch";
+import MovieCast from "../templates/MovieCast";
+import MovieDescription from "../templates/MovieDescription";
+import MovieInfo from "../templates/MovieInfo";
 
 const StyledHeader = styled.header`
   display: grid;
   grid-template-columns: 2;
   height: 232px;
 `;
-const StyledFaArrowLeft = styled(FaArrowLeft)`
+const StyledLink = styled(Link)`
   position: relative; /* fix z position on safari mobile */
   color: #fff;
   grid-column-start: 1;
@@ -50,13 +50,15 @@ const DetailsView = () => {
         <StyledIframe
           width="100%"
           height="100%"
-          src={`https://www.youtube.com/embed/${DetailData.details.videos.results[0].key}`}
+          src={`https://www.youtube-nocookie.com/embed/${DetailData.details.videos.results[0].key}`}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         ></StyledIframe>
-        <StyledFaArrowLeft />
+        <StyledLink to="/">
+          <FaArrowLeft />
+        </StyledLink>
         <StyledSwitch justify="end" align="top" />
       </StyledHeader>
       <StyledMain>

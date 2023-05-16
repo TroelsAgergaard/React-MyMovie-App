@@ -7,13 +7,11 @@ const StyledP = styled.p`
   margin-top: 8px;
 `;
 
-const MovieDescription = ({data}) => {
+const MovieDescription = ({ data }) => {
   return (
     <article>
       <Heading title="Description" size="16" as="h2" />
-      <StyledP>
-        {data.overview}
-      </StyledP>
+      <StyledP>{data.overview}</StyledP>
     </article>
   );
 };

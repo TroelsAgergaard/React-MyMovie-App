@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
 const StyledP = styled.p`
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  font-weight: 100;
+  color: #9c9c9c;
 `;
 
 const Release = (props) => {

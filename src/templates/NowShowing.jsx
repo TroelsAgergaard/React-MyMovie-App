@@ -1,8 +1,8 @@
+import { Link, useLoaderData } from "react-router-dom";
 import styled from "styled-components";
+import Heading from "../components/Heading";
 import Image from "../components/Image";
 import Rating from "../components/Rating";
-import Heading from "../components/Heading";
-import { Link, useLoaderData } from "react-router-dom";
 
 const StyledArticle = styled.article`
   height: 283px;

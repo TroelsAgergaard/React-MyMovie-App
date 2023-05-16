@@ -1,17 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import DetailsView from "./pages/DetailsView";
-import ListView from "./pages/ListView";
-import ErrorView from "./pages/ErrorView";
 import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
 } from "react-router-dom";
-import { ListViewData } from "./pages/ListView";
-import { DetailsViewData } from "./pages/DetailsView";
+import App from "./App";
+import DetailsView, { DetailsViewData } from "./pages/DetailsView";
+import ErrorView from "./pages/ErrorView";
+import ListView, { ListViewData } from "./pages/ListView";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { useState } from "react";
 import ReactSwitch from "react-switch";
+import styled from "styled-components";
 
 const StyledSwitch = styled(ReactSwitch)`
   grid-column-start: 3;

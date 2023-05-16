@@ -1,10 +1,10 @@
-import NowShowing from "../templates/NowShowing";
+import axios from "axios";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
-import Switch from "../components/Switch";
-import Popular from "../templates/Popular";
 import Navigation from "../components/Navigation";
-import axios from "axios";
+import Switch from "../components/Switch";
+import NowShowing from "../templates/NowShowing";
+import Popular from "../templates/Popular";
 
 const ListView = () => {
   return (

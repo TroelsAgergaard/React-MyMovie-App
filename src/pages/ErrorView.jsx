@@ -1,9 +1,9 @@
 import Lottie from "lottie-react";
-import errorAnimation from "../assets/lottiefiles/erroranimation.json";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import errorAnimation from "../assets/lottiefiles/erroranimation.json";
 import Button from "../components/Button";
 import Heading from "../components/Heading";
-import { Link } from "react-router-dom";
 
 const StyledDiv = styled.div`
   display: flex;

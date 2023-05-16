@@ -1,5 +1,5 @@
+import { FaFilm, FaRegBookmark, FaTicketAlt } from "react-icons/fa";
 import styled from "styled-components";
-import { FaFilm, FaTicketAlt, FaRegBookmark } from "react-icons/fa";
 
 const StyledNav = styled.nav`
   position: fixed;

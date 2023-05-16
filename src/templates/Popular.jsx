@@ -1,10 +1,10 @@
+import { Link, useLoaderData } from "react-router-dom";
 import styled from "styled-components";
 import Heading from "../components/Heading";
-import Rating from "../components/Rating";
 import Image from "../components/Image";
 import Label from "../components/Label";
+import Rating from "../components/Rating";
 import Release from "../components/Release";
-import { Link, useLoaderData } from "react-router-dom";
 
 const StyledArticle = styled.article`
   display: flex;
