@@ -12,6 +12,7 @@ const StyledSwitch = styled(ReactSwitch)`
 const Switch = (props) => {
   let [checked, setChecked] = useState(false);
   const handleChange = () => {
+    console.log("clicked");
     setChecked(!checked);
   };
   return (

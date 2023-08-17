@@ -1,4 +1,6 @@
-import { FaRegBookmark } from "react-icons/fa";
+import { useState } from "react";
+import { FaBookmark, FaRegBookmark } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Heading from "../components/Heading";
 import Label from "../components/Label";
@@ -10,6 +12,10 @@ const StyledSection = styled.section`
   gap: 12px;
 `;
 const StyledFaRegBookmark = styled(FaRegBookmark)`
+  align-self: top;
+  padding-left: 25px;
+`;
+const StyledFaBookmark = styled(FaBookmark)`
   align-self: top;
   padding-left: 25px;
 `;
@@ -28,11 +34,24 @@ const StyledP = styled.p`
 `;
 
 const MovieInfo = ({ data }) => {
+  const { id } = useParams("id");
+  const [bookmarked, setBookmarked] = useState(
+    JSON.parse(localStorage.getItem(id))
+  );
   return (
     <StyledSection>
       <div className="flexContainer justify-space-between">
         <Heading title={data.title} size="20" as="h1" />
-        <StyledFaRegBookmark />
+        <span
+          onClick={() => {
+            setBookmarked(!bookmarked);
+            bookmarked
+              ? localStorage.removeItem(id)
+              : localStorage.setItem(id, JSON.stringify(data.title));
+          }}
+        >
+          {!bookmarked ? <StyledFaRegBookmark /> : <StyledFaBookmark />}
+        </span>
       </div>
       <Rating voteAverage={data.vote_average} />
       <StyledFlexSection>

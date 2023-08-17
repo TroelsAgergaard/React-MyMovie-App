@@ -43,7 +43,7 @@ const StyledMain = styled.main`
 
 const DetailsView = () => {
   const DetailData = useLoaderData();
-  console.log("DetailsData: ", DetailData);
+
   return (
     <>
       <StyledHeader>

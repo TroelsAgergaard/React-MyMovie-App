@@ -9,7 +9,6 @@ const NewLine = styled.div`
 `;
 
 const MovieCast = ({ data }) => {
-  console.log("Cast ", data);
   return (
     <section>
       <div className="flexContainer justify-space-between wrap">
