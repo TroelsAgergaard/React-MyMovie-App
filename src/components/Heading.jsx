@@ -12,7 +12,12 @@ const StyledHeading = styled((props) => props.as)`
 `;
 
 const Heading = (props) => {
-  return <StyledHeading {...props}>{props.title}</StyledHeading>;
+  //const [darkmode, setDarkmode] = useOutletContext();
+  return (
+    <StyledHeading className="dark:text-white" {...props}>
+      {props.title}
+    </StyledHeading>
+  );
 };
 
 export default Heading;

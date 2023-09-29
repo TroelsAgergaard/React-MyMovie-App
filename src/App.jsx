@@ -1,22 +1,15 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import "./App.css";
 
 function App() {
-  const theme = {
-    light: {
-      primary: "lightgray",
-    },
-    dark: {
-      primary: "gray",
-    },
-  };
+  let [darkmode, setDarkmode] = useState(false);
   return (
-    <ThemeProvider theme={theme}>
-      <div className="app">
-        <Outlet />
+    <div className={"app " + (darkmode && "dark ")}>
+      <div className="dark:bg-black">
+        <Outlet context={[darkmode, setDarkmode]} />
       </div>
-    </ThemeProvider>
+    </div>
   );
 }
 
