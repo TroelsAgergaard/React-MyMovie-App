@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import ReactSwitch from "react-switch";
 import styled from "styled-components";
 
@@ -10,9 +10,9 @@ const StyledSwitch = styled(ReactSwitch)`
 `;
 
 const Switch = (props) => {
-  let [checked, setChecked] = useState(false);
+  const [darkmode, setDarkmode] = useOutletContext();
   const handleChange = () => {
-    setChecked(!checked);
+    setDarkmode(!darkmode);
   };
   return (
     <StyledSwitch
@@ -24,7 +24,7 @@ const Switch = (props) => {
       onHandleColor="#000000"
       uncheckedIcon={false}
       checkedIcon={false}
-      checked={checked}
+      checked={darkmode}
       onChange={handleChange}
     />
   );

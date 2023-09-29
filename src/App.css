@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&family=Mulish:wght@100;300;500;700&display=swap");
 @import "normalize.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 #root {
   max-width: 768px;
   font-family: "Mulish", sans-serif;
@@ -40,7 +43,6 @@ main {
   position: fixed;
   width: calc(100vw - 4rem);
   padding: 0 2rem;
-  background-color: #fff;
   height: 60px;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -65,7 +67,6 @@ main {
 .VerticalMovieListTitleLayout {
   position: sticky;
   top: 60px;
-  background-color: #fff;
   padding-bottom: 2rem;
 }
 .movieCardContainerLayout {
