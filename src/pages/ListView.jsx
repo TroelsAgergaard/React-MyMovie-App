@@ -9,7 +9,7 @@ import Popular from "../templates/Popular";
 const ListView = () => {
   return (
     <>
-      <header className="gridContainer header">
+      <header className="gridContainer header dark:bg-black">
         <Switch justify="end" align="center" />
         <Heading title="MyMovies" size="16" as="h1" />
       </header>
@@ -24,7 +24,7 @@ const ListView = () => {
           </div>
         </section>
         <section className="VerticalMovieListContainer">
-          <div className="flexContainer justify-space-between VerticalMovieListTitleLayout">
+          <div className="flexContainer justify-space-between VerticalMovieListTitleLayout dark:bg-black">
             <Heading title="Popular" size="16" as="h2" />
             <Button title="See More" />
           </div>
