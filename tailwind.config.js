@@ -4,6 +4,11 @@ export default {
   darkMode: "class",
   theme: {
     extend: {},
+    extend: {
+      spacing: {
+        1: "1px",
+      },
+    },
   },
   corePlugins: {
     preflight: false,

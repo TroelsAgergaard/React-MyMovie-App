@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  width: fit-content;
+  //width: fit-content;
   height: 21px;
   background-color: white;
   color: #aaa9b1;
@@ -12,7 +12,7 @@ const StyledButton = styled.button`
 `;
 
 const Button = (props) => {
-  return <StyledButton>{props.title}</StyledButton>;
+  return <StyledButton className="w-145">{props.title}</StyledButton>;
 };
 
 export default Button;
