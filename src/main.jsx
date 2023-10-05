@@ -9,6 +9,7 @@ import {
 import App from "./App";
 import DetailsView, { DetailsViewData } from "./pages/DetailsView";
 import ErrorView from "./pages/ErrorView";
+import FavoriteView from "./pages/FavoriteView";
 import ListView, { ListViewData } from "./pages/ListView";
 
 const router = createBrowserRouter(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
         loader={DetailsViewData}
         element={<DetailsView />}
       />
+      <Route path="/favorite" element={<FavoriteView />} />
     </Route>
   )
 );
