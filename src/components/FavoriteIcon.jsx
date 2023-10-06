@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
 import { FaBookmark, FaRegBookmark } from "react-icons/fa";
 import { useParams } from "react-router-dom";
+import { useFavorite } from "../hooks/useFavorite";
 
 const FavoriteIcon = () => {
-  const [bookmarked, setBookmarked] = useState(false);
-  const [render, setRender] = useState(false);
   const { id } = useParams();
+  const favorite = useFavorite(parseInt(id));
+  const [bookmarked, setBookmarked] = useState(undefined);
+
+  useEffect(() => {
+    favorite && setBookmarked(favorite);
+  }, [favorite]);
+  const [render, setRender] = useState(false);
+
   useEffect(() => {
     if (render) {
       const options = {
@@ -22,7 +29,7 @@ const FavoriteIcon = () => {
           favorite: bookmarked,
         }),
       };
-      fetch("https://api.themoviedb.org/3/account/19103084/favorite", options)
+      fetch("https://api.themoviedb.org/3/account/19103084/favorite", options);
     }
     setRender(true);
   }, [bookmarked]);
