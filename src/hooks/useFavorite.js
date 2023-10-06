@@ -6,20 +6,13 @@ export function useFavorite(id) {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOTk2YzBmYjJhNjJmMzU0NWM2OTQ2Y2IwNjg1YmZhMCIsInN1YiI6IjY0NDUxZjkwYWQ4N2Y3MDRmNjcyOTY3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fUJRev0nHSdeso-a974yCNUnsi756N491nZZ3-nXBGA",
+        Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_TOKEN,
       },
     };
-    fetch(
-      "https://api.themoviedb.org/3/account/19103084/favorite/movies?language=en-US&page=1&sort_by=created_at.asc",
-      options
-    )
+
+    fetch(`https://api.themoviedb.org/3/movie/${id}/account_states`, options)
       .then((response) => response.json())
-      .then((response) => {
-        console.log(response.results.length);
-        const isFavorite = response.results.some((obj) => obj.id === id);
-        setFavorite(isFavorite);
-      })
+      .then((response) => setFavorite(response.favorite))
       .catch((err) => console.error(err));
   }, []);
   return favorite;
