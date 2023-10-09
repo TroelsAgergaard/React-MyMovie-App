@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Heading from "../components/Heading";
@@ -21,30 +22,49 @@ const StyledDiv = styled.div`
 `;
 
 const Favorite = () => {
+  const [favoriteListData, setFavoriteListData] = useState(undefined);
+  useEffect(() => {
+    const favorite_options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_TOKEN,
+      },
+    };
+
+    fetch(
+      "https://api.themoviedb.org/3/account/19103084/favorite/movies?language=en-US&page=1&sort_by=created_at.asc",
+      favorite_options
+    )
+      .then((response) => response.json())
+      .then((response) => setFavoriteListData(response))
+      .catch((err) => console.error(err));
+  }, [favoriteListData]);
+
   return (
-    <section className="HorizontalMovieListContainer">
-      {/* {MovieData.popular.map((data) => ( */}
-      <Link to={`details/xxxxxx`} key="xxxxxx">
-        <StyledArticle>
-          <Image
-            // src={`https://image.tmdb.org/t/p/w200/poster_path`}
-            src={"https://picsum.photos/85/120"}
-            width="85"
-            height="120"
-          />
-          <StyledSection>
-            <Heading title="title" size="14" as="h3" />
-            <Rating voteAverage="5" />
-            <StyledDiv>
-              <Label title="horror" />
-              <Label title="thriller" />
-              <Label title="documentary" />
-            </StyledDiv>
-            <Release date="11.11.2012" />
-          </StyledSection>
-        </StyledArticle>
-      </Link>
-      {/* ))} */}
+    <section className="HorizontalMovieListContainer flex flex-col gap-4">
+      {favoriteListData &&
+        favoriteListData.results.map((data) => (
+          <Link to={`../details/${data.id}`} key={data.id}>
+            <StyledArticle>
+              <Image
+                src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
+                width="85"
+                height="120"
+              />
+              <StyledSection>
+                <Heading title={data.title} size="14" as="h3" />
+                <Rating voteAverage={data.vote_average} />
+                <StyledDiv>
+                  <Label title="horror" />
+                  <Label title="thriller" />
+                  <Label title="documentary" />
+                </StyledDiv>
+                <Release date={data.release_date} />
+              </StyledSection>
+            </StyledArticle>
+          </Link>
+        ))}
     </section>
   );
 };
