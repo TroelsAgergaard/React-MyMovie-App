@@ -20,8 +20,7 @@ const FavoriteIcon = () => {
         headers: {
           accept: "application/json",
           "content-type": "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhOTk2YzBmYjJhNjJmMzU0NWM2OTQ2Y2IwNjg1YmZhMCIsInN1YiI6IjY0NDUxZjkwYWQ4N2Y3MDRmNjcyOTY3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fUJRev0nHSdeso-a974yCNUnsi756N491nZZ3-nXBGA",
+          Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_TOKEN,
         },
         body: JSON.stringify({
           media_type: "movie",
