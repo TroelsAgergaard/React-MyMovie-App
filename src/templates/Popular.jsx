@@ -5,6 +5,7 @@ import Image from "../components/Image";
 import Label from "../components/Label";
 import Rating from "../components/Rating";
 import Release from "../components/Release";
+import { useGenres } from "../hooks/useGenres";
 
 const StyledArticle = styled.article`
   display: flex;
@@ -22,26 +23,32 @@ const StyledDiv = styled.div`
 
 const Popular = () => {
   const MovieData = useLoaderData();
+  const genres = useGenres();
 
   return (
     <>
-      {MovieData.popular.map((data) => (
-        <Link to={`details/${data.id}`} key={data.id}>
+      {MovieData.popular.map((movie) => (
+        <Link to={`details/${movie.id}`} key={movie.id}>
           <StyledArticle>
             <Image
-              src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
+              src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
               width="85"
               height="120"
             />
             <StyledSection>
-              <Heading title={data.title} size="14" as="h3" />
-              <Rating voteAverage={data.vote_average} />
+              <Heading title={movie.title} size="14" as="h3" />
+              <Rating voteAverage={movie.vote_average} />
               <StyledDiv>
-                <Label title="horror" />
-                <Label title="thriller" />
-                <Label title="documentary" />
+              {MovieData && movie.genre_ids.map((genreId) => 
+                    genres && genres.map(
+                      (genre) =>
+                        genre.id === genreId && (
+                          <Label title={genre.name} key={genre.id} />
+                        )
+                    )
+                  )}
               </StyledDiv>
-              <Release date={data.release_date} />
+              <Release date={movie.release_date} />
             </StyledSection>
           </StyledArticle>
         </Link>

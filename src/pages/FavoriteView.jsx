@@ -1,9 +1,11 @@
+import React, { Suspense } from "react";
 import Heading from "../components/Heading";
 import Navigation from "../components/Navigation";
 import Switch from "../components/Switch";
-import Favorite from "../templates/Favorite";
+//import Favorite from "../templates/Favorite";
+const Favorite = React.lazy(() => import("../templates/Favorite"));
 
-const ListView = () => {
+const FavoriteView = () => {
   return (
     <>
       <header className="gridContainer header dark:bg-black">
@@ -13,7 +15,9 @@ const ListView = () => {
       <main>
         <section className="VerticalMovieListContainer">
           <div className="flexContainer movieListContainerLayout">
-            <Favorite />
+            <Suspense fallback={<div>Loading favorite...</div>}>
+              <Favorite />
+            </Suspense>
           </div>
         </section>
       </main>
@@ -24,4 +28,4 @@ const ListView = () => {
   );
 };
 
-export default ListView;
+export default FavoriteView;

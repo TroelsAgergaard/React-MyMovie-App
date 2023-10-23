@@ -1,4 +1,5 @@
 import { FaFilm, FaRegBookmark, FaTicketAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledNav = styled.nav`
@@ -20,7 +21,9 @@ const Navigation = () => {
     <StyledNav className="dark:bg-black">
       <FaFilm />
       <FaTicketAlt />
-      <FaRegBookmark />
+      <Link to="/favorite">
+        <FaRegBookmark />
+      </Link>
     </StyledNav>
   );
 };
