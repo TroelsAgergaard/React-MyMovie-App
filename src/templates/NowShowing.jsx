@@ -15,30 +15,31 @@ const NowShowing = () => {
   const MovieData = useLoaderData();
   return (
     <>
-      {MovieData.nowShowing.map((data) => (
-        <Link to={`details/${data.id}`} key={data.id}>
-          <StyledArticle>
-            <figure>
-              <Image
-                width="143"
-                shadow={true}
-                src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
-                alt="Cover Image"
+      {MovieData &&
+        MovieData.nowShowing.map((data) => (
+          <Link to={`details/${data.id}`} key={data.id}>
+            <StyledArticle>
+              <figure>
+                <Image
+                  width="143"
+                  shadow={true}
+                  src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`}
+                  alt="Cover Image"
+                />
+              </figure>
+              <Heading
+                title={
+                  data.title.length > 25
+                    ? data.title.split(" ").slice(0, 3).join(" ") + "..."
+                    : data.title
+                }
+                size="14"
+                as="h3"
               />
-            </figure>
-            <Heading
-              title={
-                data.title.length > 25
-                  ? data.title.split(" ").slice(0, 3).join(" ") + "..."
-                  : data.title
-              }
-              size="14"
-              as="h3"
-            />
-            <Rating voteAverage={data.vote_average} />
-          </StyledArticle>
-        </Link>
-      ))}
+              <Rating voteAverage={data.vote_average} />
+            </StyledArticle>
+          </Link>
+        ))}
     </>
   );
 };

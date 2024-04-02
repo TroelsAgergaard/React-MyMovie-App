@@ -41,23 +41,33 @@ const ListView = () => {
 };
 
 export const ListViewData = async () => {
-  return await Promise.allSettled([
-    axios(
-      `https://api.themoviedb.org/3/movie/now_playing/?api_key=${
-        import.meta.env.VITE_TMDB_API_KEY
-      }`
-    ),
-    axios(
-      `https://api.themoviedb.org/3/movie/popular/?api_key=${
-        import.meta.env.VITE_TMDB_API_KEY
-      }`
-    ),
-  ]).then((data) => {
-    return {
-      nowShowing: data[0].value.data.results,
-      popular: data[1].value.data.results,
-    };
-  });
+  const now_playing_options = {
+    url: "https://api.themoviedb.org/3/movie/now_playing",
+    headers: {
+      accept: "application/json",
+      Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_TOKEN,
+    },
+  };
+  const popular_options = {
+    url: "https://api.themoviedb.org/3/movie/popular",
+    headers: {
+      accept: "application/json",
+      Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_TOKEN,
+    },
+  };
+  return Promise.allSettled([
+    axios(now_playing_options),
+    axios(popular_options),
+  ])
+    .then((data) => {
+      return {
+        nowShowing: data[0].value.data.results,
+        popular: data[1].value.data.results,
+      };
+    })
+    .catch((error) => {
+      console.log("Error fetching data: " + error);
+    });
 };
 
 export default ListView;

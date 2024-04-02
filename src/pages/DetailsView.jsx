@@ -71,7 +71,7 @@ const DetailsView = () => {
 };
 
 export const DetailsViewData = async ({ params }) => {
-  return Promise.allSettled([
+  return await Promise.allSettled([
     axios(
       `http://api.themoviedb.org/3/movie/${params.id}?api_key=${
         import.meta.env.VITE_TMDB_API_KEY

@@ -15,6 +15,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorView />}>
       <Route index loader={ListViewData} element={<ListView />} />
+      {/* <Route index element={<Np />} /> */}
       <Route
         path="/details/:id"
         loader={DetailsViewData}
