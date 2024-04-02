@@ -42,16 +42,18 @@ const ListView = () => {
 
 export const ListViewData = async () => {
   return await Promise.allSettled([
-    axios(
-      `https://api.themoviedb.org/3/movie/now_playing/?api_key=${
-        import.meta.env.VITE_TMDB_API_KEY
-      }`
-    ),
-    axios(
-      `https://api.themoviedb.org/3/movie/popular/?api_key=${
-        import.meta.env.VITE_TMDB_API_KEY
-      }`
-    ),
+    axios(`https://api.themoviedb.org/3/movie/now_playing`, {
+      headers: {
+        accept: "application/json",
+        Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_TOKEN,
+      },
+    }),
+    axios(`https://api.themoviedb.org/3/movie/popular`, {
+      headers: {
+        accept: "application/json",
+        Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_TOKEN,
+      },
+    }),
   ]).then((data) => {
     return {
       nowShowing: data[0].value.data.results,
