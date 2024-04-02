@@ -41,6 +41,7 @@ main {
 }
 .header {
   position: fixed;
+  background-color: white;
   width: calc(100vw - 4rem);
   padding: 0 2rem;
   height: 60px;

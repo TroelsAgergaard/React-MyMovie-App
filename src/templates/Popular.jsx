@@ -17,8 +17,11 @@ const StyledSection = styled.section`
   gap: 10px;
 `;
 const StyledDiv = styled.div`
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 6px 8px;
 `;
 
 const Popular = () => {
@@ -39,13 +42,16 @@ const Popular = () => {
               <Heading title={movie.title} size="14" as="h3" />
               <Rating voteAverage={movie.vote_average} />
               <StyledDiv>
-              {MovieData && movie.genre_ids.map((genreId) => 
-                    genres && genres.map(
-                      (genre) =>
-                        genre.id === genreId && (
-                          <Label title={genre.name} key={genre.id} />
-                        )
-                    )
+                {MovieData &&
+                  movie.genre_ids.map(
+                    (genreId) =>
+                      genres &&
+                      genres.map(
+                        (genre) =>
+                          genre.id === genreId && (
+                            <Label title={genre.name} key={genre.id} />
+                          )
+                      )
                   )}
               </StyledDiv>
               <Release date={movie.release_date} />

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 const StyledSpan = styled.span`
-  width: fit-content;
+  white-space: nowrap;
   padding 4px 12px;
-  background-color: #DBE3FF;
-  color: #88A4E8;
+  background-color: #dbe3ff;
+  color: #88a4e8;
   border-radius: 25px;
   text-transform: uppercase;
   font-size: 8px;
