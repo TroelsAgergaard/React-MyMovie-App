@@ -19,10 +19,10 @@ const StyledNav = styled.nav`
 const Navigation = () => {
   return (
     <StyledNav className="dark:bg-black">
-      <FaFilm />
-      <FaTicketAlt />
+      <FaFilm className="dark:text-white" />
+      <FaTicketAlt className="dark:text-white" />
       <Link to="/favorite">
-        <FaRegBookmark />
+        <FaRegBookmark className="dark:text-white" />
       </Link>
     </StyledNav>
   );

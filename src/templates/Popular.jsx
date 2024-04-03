@@ -17,11 +17,9 @@ const StyledSection = styled.section`
   gap: 10px;
 `;
 const StyledDiv = styled.div`
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 8px;
+  gap: 5px 8px;
 `;
 
 const Popular = () => {
