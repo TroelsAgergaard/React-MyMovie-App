@@ -13,6 +13,7 @@ import FavoriteView from "./pages/FavoriteView";
 import ListView, { ListViewData } from "./pages/ListView";
 
 const router = createBrowserRouter(
+
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorView />}>
       <Route index loader={ListViewData} element={<ListView />} />
